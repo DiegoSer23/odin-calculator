@@ -8,27 +8,35 @@
 <body>
     <script src="calculator.js" defer></script>
     <div class="calculator-container">
-        <input type="text" value="123456" readonly="readonly">
-        <div class="number-container">
-            <button id="num1">1</button>
-            <button id="num2">2</button>
-            <button id="num3">3</button>
-            <button id="num4">4</button>
-            <button id="num5">5</button>
-            <button id="num6">6</button>
-            <button id="num7">7</button>
-            <button id="num8">8</button>
-            <button id="num9">9</button>
-            <button id="num0">0</button>
+        <input id="display" type="text" readonly="readonly">
+        <div class="buttons-container">
+            <div class="number-container">
+                <div id="row1-num">
+                    <button class="numBtn" value="1">1</button>
+                    <button class="numBtn" value="2">2</button>
+                    <button class="numBtn" value="3">3</button>
+                    <button id="plus">+</button>
+                </div>
+                <div id="row2-num">
+                    <button class="numBtn" value="4">4</button>
+                    <button class="numBtn" value="5">5</button>
+                    <button class="numBtn" value="6">6</button>
+                    <button id="minus">-</button>
+                </div>
+                <div id="row3-num">
+                    <button class="numBtn" value="7">7</button>
+                    <button class="numBtn" value="8">8</button>
+                    <button class="numBtn" value="9">9</button>
+                    <button id="division">/</button>
+                </div>
+                <div id="row4-num">
+                    <button class="numBtn" value="0">0</button>
+                    <button id="equals">=</button>
+                    <button id="clear">Clear</button>
+                    <button id="multi">*</button>
+                </div>
+            </div>
         </div>
-        <div class="signs-container">
-            <button id="plus">+</button>
-            <button id="minus">-</button>
-            <button id="division">/</button>
-            <button id="multi">*</button>
-        </div>
-        <button id="equals">=</button>
-        <button id="clear">Clear</button>
     </div>
 </body>
 </html>

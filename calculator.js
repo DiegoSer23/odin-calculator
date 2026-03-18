@@ -2,6 +2,27 @@ let firstOperand;
 let secondOperand;
 let sign;
 
+const display = document.getElementById("display");
+const numberButton = document.getElementsByClassName("numBtn");
+const clearButton = document.getElementById("clear");
+const sumButton = document.getElementById("plus");
+
+for (let i=0; i < numberButton.length; i++) {
+    numberButton[i].addEventListener("click", (event) => {
+        handleNumberType(event, numberButton[i].value);
+    })
+}
+
+clearButton.addEventListener("click", clearDisplay);
+
+function handleNumberType(event, numValue) {
+    display.value += numValue;
+}
+
+function clearDisplay(event) {
+    display.value = "";
+}
+
 function sum(firstNum, secondNum) {
     return (firstNum + secondNum);
 }
