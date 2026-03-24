@@ -37,10 +37,9 @@ function handleSignInput(event, signValue) {
         sign = signValue;
     }
     else {
-        if (!sign) { sign = signValue; }
         secondOperand = Number(display.value);
         operate(firstOperand, secondOperand, sign);
-        firstOperand = Number(display.value);
+        firstOperand = (signValue !== "=") ? Number(display.value) : null;
         secondOperand = null;
         sign = (signValue !== "=") ? signValue : null;
     }
@@ -62,6 +61,10 @@ function minus(firstNum, secondNum) {
 }
 
 function division(firstNum, secondNum) {
+    if (secondNum === 0) {
+        alert("Do not divide by 0, nothing good comes out of it.");
+        return 0;
+    }
     return (firstNum / secondNum);
 }
 
@@ -96,6 +99,6 @@ function operate(firstNum, secondNum, sign) {
         default:
             throw new Error("Invalid operator");
     }
-    clearDisplay
-    display.value = result;
+    display.value = "";
+    display.value = (Number.isInteger(result)) ? result : result.toFixed(2);
 }
